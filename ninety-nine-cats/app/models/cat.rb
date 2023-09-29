@@ -25,9 +25,8 @@ class Cat < ApplicationRecord
         end
     end
 
-
     def age
-        time_ago_in_words(Date.today - self[:birth_date])
+        time_ago_in_words(birth_date)
     end
 
 
