@@ -17,13 +17,13 @@ class Cat < ApplicationRecord
     CAT_COLORS = ["Red", "Blue", "Orange", "Calico", "Yellow"]
     validates :birth_date, :color, :name, :sex, presence: true
     validates_inclusion_of :color, in: CAT_COLORS
-    validate :birth_date_cannot_be_future
+    # validate :birth_date_cannot_be_future
 
-    def birth_date_cannot_be_future
-        if birth_date > Date.today
-            errors.add(:birth_date, "can't be in the future")
-        end
-    end
+    # def birth_date_cannot_be_future
+    #     if birth_date > Date.today
+    #         errors.add(:birth_date, "can't be in the future")
+    #     end
+    # end
 
     def age
         time_ago_in_words(birth_date)
