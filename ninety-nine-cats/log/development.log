@@ -39,3 +39,87 @@ Migrating to CreateCats (20230929185346)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(723150122408807205)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-09-29 16:41:08 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.8ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:2
+  Rendered cats/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1384)
+  Rendered layout layouts/application.html.erb (Duration: 476.1ms | Allocations: 95781)
+Completed 200 OK in 489ms (Views: 484.2ms | ActiveRecord: 0.8ms | Allocations: 101459)
+
+
+Started GET "/" for ::1 at 2023-09-29 16:41:12 -0400
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:2
+  Rendered cats/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 634)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3120)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.5ms | Allocations: 3430)
+
+
+Started GET "/" for ::1 at 2023-09-29 16:41:13 -0400
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:2
+  Rendered cats/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 570)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2921)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.6ms | Allocations: 3170)
+
+
+Started GET "/" for ::1 at 2023-09-29 16:41:13 -0400
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:2
+  Rendered cats/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 562)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 2928)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.5ms | Allocations: 3171)
+
+
+Started GET "/" for ::1 at 2023-09-29 16:41:13 -0400
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:2
+  Rendered cats/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 570)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2922)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 3171)
+
+
+Started GET "/cats" for ::1 at 2023-09-29 16:41:19 -0400
+Processing by CatsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:2
+  Rendered cats/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 562)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2927)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.4ms | Allocations: 3169)
+
+
+Started GET "/index" for ::1 at 2023-09-29 16:41:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/index"):
+  
+Started GET "/cats/1" for ::1 at 2023-09-29 16:41:43 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:8:in `show'
+Completed 404 Not Found in 10ms (ActiveRecord: 5.3ms | Allocations: 6090)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Cat with 'id'=1:
+  app/controllers/cats_controller.rb:8:in `show'
+
+Started POST "/__better_errors/c6f7eb868086588a/variables" for ::1 at 2023-09-29 16:41:43 -0400
